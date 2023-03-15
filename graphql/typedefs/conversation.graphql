@@ -1,0 +1,20 @@
+# Types
+type Conversation implements Timestamps {
+    id: ID!
+    participants: [Participant]
+    latestMessage: Message
+    
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input ConversationCreateInput {
+    participants: [ID]
+}
+
+input ConversationUpdateInput {
+    participants: [ID]
+    latestMessage: ID
+}

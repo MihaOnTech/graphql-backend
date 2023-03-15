@@ -1,0 +1,40 @@
+# Custom Scalars
+scalar Date
+
+type Query {
+  # Users
+  users: [User]!
+  user(id: ID!): User
+
+  # Participants
+  participants: [Participant]!
+  participant(id: ID!): Participant
+
+  # Conversations
+  conversations: [Conversation]!
+  conversation(id: ID!): Conversation
+
+  # Messages
+  messages: [Message]!
+  message(id: ID!): Message
+}
+
+type Mutation {
+  # Users
+  createUser(user: UserCreateInput!): User!
+  updateUser(id: ID!, user: UserUpdateInput!): User!
+  addUserToConversation(id: ID!, conversation: ID!): User!
+
+  # Participants
+  createParticipant(participant: ParticipantCreateInput!): Participant!
+  updateParticipant(id: ID!, participant: ParticipantUpdateInput!): Participant!
+  
+
+  # Conversations
+  createConversation(conversation: ConversationCreateInput!): Conversation!
+  updateConversation(id: ID!, conversation: ConversationUpdateInput!): Conversation!
+
+  # Messages
+  createMessage(message: MessageCreateInput!): Message!
+  updateMessage(id: ID!, message: MessageUpdateInput!): Message!
+}

@@ -1,0 +1,21 @@
+# Types
+type Participant implements Timestamps {
+    id: ID!
+    user: User!
+    conversation: Conversation!
+    seenLastMessage: Boolean!
+
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input ParticipantCreateInput {
+    user: ID!
+    conversation: ID!
+}
+
+input ParticipantUpdateInput {
+    seenLastMessage: Boolean
+}

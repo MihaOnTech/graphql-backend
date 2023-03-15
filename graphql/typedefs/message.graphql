@@ -1,0 +1,25 @@
+# Types
+type Message implements Timestamps {
+    id: ID!
+    content: String!
+    participant: Participant!
+    conversation: Conversation!
+    isLatestMessage: Boolean
+    
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input MessageCreateInput {
+    content: String!
+    participant: ID!
+    conversation: ID!
+    isLatestMessage: Boolean!
+}
+
+input MessageUpdateInput {
+    content: String
+    isLatestMessage: Boolean
+}
